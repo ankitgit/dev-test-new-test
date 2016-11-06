@@ -7,13 +7,17 @@ import java.util.List;
 
 public class RouteFinderService {
 
-    List<String> busRouteList;
+    List<String> busRouteList = null;
 
     public RouteFinderService() {
-        this.busRouteList = PlannedRoutes.listOfStops;
     }
 
     public DirectRouteExistInfo checkRouteExist(int departureStationID, int arrivalStationID) {
+
+        if (busRouteList == null)
+            this.busRouteList = new PlannedRoutes().getListOfStops();
+
+
         for (String route : this.busRouteList) {
             if (checkParticularBusRoute(route, departureStationID, arrivalStationID)) {
                 return new DirectRouteExistInfo(departureStationID, arrivalStationID, true);

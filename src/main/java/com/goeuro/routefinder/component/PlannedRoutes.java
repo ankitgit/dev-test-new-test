@@ -14,21 +14,14 @@ import java.util.List;
 import java.util.Scanner;
 
 @Component
-public class PlannedRoutes implements ApplicationRunner {
+public class PlannedRoutes {
 
-    public static List<String> listOfStops;
+    private static List<String> listOfStops;
+
+    @Value("${name}")
     private String filePath;
 
-    /**
-     * Here write logic for loading and storing the file in-memory
-     *
-     * @param args
-     * @throws Exception
-     */
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-        List<String> value = args.getOptionValues("some");
-        filePath = value.get(0);
+    public PlannedRoutes() {
         listOfStops = createBusRouteFromFile();
     }
 
@@ -52,7 +45,10 @@ public class PlannedRoutes implements ApplicationRunner {
             e.printStackTrace();
             return Collections.emptyList();
         }
+
     }
 
-
+    public List<String> getListOfStops() {
+        return listOfStops;
+    }
 }
