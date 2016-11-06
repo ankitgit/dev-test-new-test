@@ -1,9 +1,15 @@
 package com.goeuro.routefinder.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.goeuro.routefinder.component.DirectRouteExistInfo;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping(path = "/find")
+@RestController
 public class PathFinder {
+
+    @RequestMapping(value = "/api/direct", method = RequestMethod.GET)
+    public @ResponseBody DirectRouteExistInfo existsDirectRoute(@RequestParam(value = "dep_sid") int departureStationId,
+                                                  @RequestParam(value = "arr_sid") int arrivalStationId) {
+        return new DirectRouteExistInfo(departureStationId, arrivalStationId, false);
+
+    }
 }
