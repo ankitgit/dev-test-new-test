@@ -1,12 +1,10 @@
 package com.goeuro.routefinder.component;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,14 +12,21 @@ import java.util.List;
 import java.util.Scanner;
 
 @Component
-public class PlannedRoutes {
+public class PlannedRoutes implements ApplicationRunner {
 
     private static List<String> listOfStops;
-
-    @Value("${name}")
     private String filePath;
 
-    public PlannedRoutes() {
+    /**
+     * Here write logic for loading and storing the file in-memory
+     *
+     * @param args
+     * @throws Exception
+     */
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        List<String> value = args.getOptionValues("file.location");
+        filePath = value.get(0);
         listOfStops = createBusRouteFromFile();
     }
 
