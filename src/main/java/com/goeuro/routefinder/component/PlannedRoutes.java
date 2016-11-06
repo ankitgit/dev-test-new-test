@@ -25,7 +25,7 @@ public class PlannedRoutes implements ApplicationRunner {
      */
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        List<String> value = args.getOptionValues("file.location");
+        List<String> value = args.getOptionValues("fileloc");
         filePath = value.get(0);
         listOfStops = createBusRouteFromFile();
     }

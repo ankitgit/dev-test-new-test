@@ -13,7 +13,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
 jar {
-    baseName = 'go-euro-root-finder-service'
+    baseName = 'go-euro-route-finder-service'
     version =  '0.0.1'
 }
 
