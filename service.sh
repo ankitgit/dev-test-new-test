@@ -1,8 +1,6 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-
-
 # Keep the pwd in mind!
 # Example: RUN="java -jar $DIR/target/magic.jar"
 RUN="java -jar $DIR/build/libs/go-euro-route-finder-service-0.0.1.jar --fileloc=$2"
