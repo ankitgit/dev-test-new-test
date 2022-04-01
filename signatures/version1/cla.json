@@ -1,3 +1,12 @@
 {
-   "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "ankitgit",
+      "id": 9255185,
+      "comment_id": 1086171510,
+      "created_at": "2022-04-01T17:39:14Z",
+      "repoId": 72985326,
+      "pullRequestNo": 3
+    }
+  ]
 }
