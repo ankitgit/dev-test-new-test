@@ -1,9 +1,15 @@
 name: Dummy CI
 on:
   pull_request:
+    types:
+      - ready_for_review
+      - synchronize
+      - opened
+      - reopened
 
 jobs:
   validateTrigger:
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
