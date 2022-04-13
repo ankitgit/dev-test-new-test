@@ -30,7 +30,6 @@ on:
           - Major
           - Minor
 
-
 jobs:
 
   validateTrigger:
