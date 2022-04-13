@@ -1,0 +1,45 @@
+name: NES CI
+
+on:
+  push:
+    branches:
+      - '*'
+    paths-ignore:
+      - nes-core/include/Version/version.hpp
+      - README.md
+      - CODE_OF_CONDUCT.md
+      - CHECKLIST.yml
+      - '.github/**'
+  pull_request_target:
+    types: [ ready_for_review, synchronize ]
+    branches:
+      - '*'
+    paths-ignore:
+      - nes-core/include/Version/version.hpp
+      - README.md
+      - CODE_OF_CONDUCT.md
+      - CHECKLIST.yml
+      - '.github/**'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Perform Major or Minor Release'
+        type: choice
+        required: true
+        options:
+          - Major
+          - Minor
+
+jobs:
+
+  validateTrigger:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checklist
+        uses: wyozi/contextual-qa-checklist-action@master
+        with:
+          gh-token: ${{ secrets.GITHUB_TOKEN }}
+          include-hidden-files: true
