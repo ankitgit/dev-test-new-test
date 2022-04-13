@@ -1,9 +1,6 @@
-name: NES CI
-
+name: Dummy CI
 on:
   push:
-    branches:
-      - '*'
     paths-ignore:
       - nes-core/include/Version/version.hpp
       - README.md
