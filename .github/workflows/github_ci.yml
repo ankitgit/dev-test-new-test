@@ -49,4 +49,4 @@ jobs:
           dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
       - name: "Print Changelog"
-        run: echo ./CHANGELOG.md
+        run: cat /github/workspace/CHANGELOG.md
