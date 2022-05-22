@@ -49,7 +49,7 @@ jobs:
           pullRequests: true
           prWoLabels: true
           author: true
-          compare-link: true
+          compareLink: true
           #sinceTag: ${{ github.event.inputs.start-tag }}
           #dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
