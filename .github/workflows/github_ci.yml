@@ -48,6 +48,7 @@ jobs:
           issuesWoLabels: true
           pullRequests: true
           prWoLabels: true
+          author: true
           #sinceTag: ${{ github.event.inputs.start-tag }}
           #dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
