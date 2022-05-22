@@ -7,6 +7,8 @@ RUN="java -jar $DIR/build/libs/go-euro-route-finder-service-0.0.1.jar --fileloc=
 NAME=go-euro-route-finder
 
 
+
+
 DATA_FILE=$2
 
 PIDFILE=/tmp/$NAME.pid
