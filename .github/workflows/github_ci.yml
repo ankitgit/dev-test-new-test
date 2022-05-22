@@ -55,7 +55,3 @@ jobs:
         with:
           commit_message: Update Changelog for tag
           file_pattern: CHANGELOG.md
-      - name: "Check content"
-        run: ls -lrt /tmp
-      - name: "Print Changelog"
-        run: cat /tmp/github-changelog-http-cache
