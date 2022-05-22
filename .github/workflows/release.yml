@@ -12,7 +12,6 @@ changelog:
     - title: Exciting New Features 🎉
       labels:
         - release
-        - enhancement
     - title: Other Changes
       labels:
         - "*"
