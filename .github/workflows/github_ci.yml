@@ -44,7 +44,6 @@ jobs:
         uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          headerLabel: "# New Release 🎉"
           issues: true
           issuesWoLabels: true
           pullRequests: true
@@ -52,8 +51,8 @@ jobs:
           author: true
           compareLink: true
           bugsLabel: "## Bug Fixes 🐛"
-          #sinceTag: ${{ github.event.inputs.start-tag }}
-          #dueTag:  ${{ github.event.inputs.end-tag }}
+          sinceTag: ${{ github.event.inputs.start-tag }}
+          dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release Issues 🎊":{"labels":["release"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
