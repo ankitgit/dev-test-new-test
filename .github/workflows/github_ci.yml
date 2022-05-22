@@ -56,6 +56,7 @@ jobs:
           stripGeneratorNotice: true
           addSections: '{"Release Issues 🎊":{"prefix":"*","labels":["release"]}}'
           add-sections: '{"documentation 🎊":{"prefix":"*","labels":["release"]}}'
+          usernamesAsGithubLogins: true
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for tag
