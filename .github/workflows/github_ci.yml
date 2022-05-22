@@ -54,4 +54,4 @@ jobs:
       - name: "Check content"
         run: ls -lrt && pwd
       - name: "Print Changelog"
-        run: cat /github/workspace/CHANGELOG.md
+        run: cat /tmp/github-changelog-http-cache
