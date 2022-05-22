@@ -50,11 +50,11 @@ jobs:
           prWoLabels: true
           author: true
           compareLink: true
-          bugsLabel: "## Bug Fixes 🐛"
-          sinceTag: ${{ github.event.inputs.start-tag }}
-          dueTag:  ${{ github.event.inputs.end-tag }}
+          bugsLabel: "### Bug Fixes 🐛"
+          #sinceTag: ${{ github.event.inputs.start-tag }}
+          #dueTag:  ${{ github.event.inputs.end-tag }}
           stripGeneratorNotice: true
-          addSections: '{"release":{"prefix":"## Release Issues 🎊","labels":["release"]}}'
+          addSections: '{"release":{"prefix":"### Release Issues 🎊","labels":["release"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for tag
