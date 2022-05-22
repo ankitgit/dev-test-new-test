@@ -50,7 +50,7 @@ jobs:
           prWoLabels: true
           author: true
           compareLink: true
-          bugLabel: "Bug Fixes 🐛"
+          bugsLabel: "Bug Fixes 🐛"
           #sinceTag: ${{ github.event.inputs.start-tag }}
           #dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
