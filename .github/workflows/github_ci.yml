@@ -55,6 +55,7 @@ jobs:
           due-tag:  ${{ github.event.inputs.end-tag }}
           stripGeneratorNotice: true
           addSections: '{"Release Issues 🎊":{"labels":["release"]}}'
+          add-sections: '{"documentation 🎊":{"prefix":"*","labels":["release"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for tag
