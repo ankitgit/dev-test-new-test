@@ -9,7 +9,7 @@ on:
   push:
     branches:
       - master
-  repository_dispatch:
+  workflow_dispatch:
     inputs:
       start-tag:
         description: 'Start tag number'
@@ -31,7 +31,7 @@ jobs:
           gh-token: ${{ secrets.GITHUB_TOKEN }}
 
   generateChangeLog:
-    if: github.event_name != 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-20.04
     env:
       START_TAG: ${{ github.event.inputs.start-tag }}
