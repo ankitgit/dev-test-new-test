@@ -41,7 +41,7 @@ jobs:
         with:
           ref: master
       - name: "Generate release changelog"
-        uses: heinrichreimer/github-changelog-generator-action@v2.2
+        uses: heinrichreimer/github-changelog-generator-action@v2.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issues: true
@@ -51,11 +51,10 @@ jobs:
           author: true
           compareLink: true
           bugsLabel: "## Bug Fixes 🐛"
-          sinceTag: "${{ github.event.inputs.start-tag }}"
-          dueTag:  "${{ github.event.inputs.end-tag }}"
+          sinceTag: ${{ github.event.inputs.start-tag }}
+          dueTag:  ${{ github.event.inputs.end-tag }}
           stripGeneratorNotice: true
           addSections: '{"Release Issues 🎊":{"prefix":"*","labels":["release"]}}'
-          add-sections: '{"documentation 🎊":{"prefix":"*","labels":["release"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Changelog for tag
