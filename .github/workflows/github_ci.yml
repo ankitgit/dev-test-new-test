@@ -32,13 +32,16 @@ jobs:
 
   generateChangeLog:
     if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       START_TAG: ${{ github.event.inputs.start-tag }}
       END_TAG: ${{ github.event.inputs.end-tag }}
     steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
       - name: "Generate release changelog"
-        uses: heinrichreimer/github-changelog-generator-action@v2.3
+        uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issues: true
