@@ -54,7 +54,7 @@ jobs:
           since-tag: ${{ github.event.inputs.start-tag }}
           due-tag:  ${{ github.event.inputs.end-tag }}
           stripGeneratorNotice: true
-          addSections: '{"Release Issues 🎊":{"labels":["release"]}}'
+          addSections: '{"Release Issues 🎊":{"prefix":"*","labels":["release"]}}'
           add-sections: '{"documentation 🎊":{"prefix":"*","labels":["release"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
