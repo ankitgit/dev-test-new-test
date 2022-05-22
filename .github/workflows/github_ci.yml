@@ -41,7 +41,6 @@ jobs:
         uses: heinrichreimer/github-changelog-generator-action@v2.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          output: /CHANGELOG.md
           issues: true
           issuesWoLabels: true
           pullRequests: true
@@ -52,6 +51,6 @@ jobs:
           compareLink: true
           verbose: true
       - name: "Check content"
-        run: ls -lrt
+        run: ls -lrt && pwd
       - name: "Print Changelog"
         run: cat /github/workspace/CHANGELOG.md
