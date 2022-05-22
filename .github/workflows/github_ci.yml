@@ -48,6 +48,10 @@ jobs:
           sinceTag: ${{ github.event.inputs.start-tag }}
           dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Changelog for tag
+          file_pattern: CHANGELOG.md
       - name: "Check content"
         run: ls -lrt /tmp
       - name: "Print Changelog"
