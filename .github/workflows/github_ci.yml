@@ -6,6 +6,17 @@ on:
       - synchronize
       - opened
       - reopened
+  push:
+    branches:
+      - master
+  repository_dispatch:
+    inputs:
+      start-tag:
+        description: 'Start tag number'
+        required: true
+      end-tag:
+        description: 'End tag number'
+        required: true
 
 jobs:
   validateTrigger:
@@ -18,3 +29,24 @@ jobs:
         uses: wyozi/contextual-qa-checklist-action@1.2
         with:
           gh-token: ${{ secrets.GITHUB_TOKEN }}
+
+  generateChangeLog:
+    if: §{{ github.event.repository_dispatch }}
+    runs-on: ubuntu-20.04
+    env:
+      START_TAG: ${{ github.event.inputs.start-tag }}
+      END_TAG: ${{ github.event.inputs.end-tag }}
+    steps:
+      - name: "Generate release changelog"
+        uses: heinrichreimer/github-changelog-generator-action@v2.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issues: true
+          issuesWoLabels: true
+          pullRequests: true
+          prWoLabels: true
+          sinceTag: ${{ github.event.inputs.start-tag }}
+          dueTag:  ${{ github.event.inputs.end-tag }}
+          addSections: '{"Release":{"labels":["release"]}}'
+      - name: "Print Changelog"
+        run: echo ./CHANGELOG.md
