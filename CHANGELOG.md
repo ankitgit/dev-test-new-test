@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.0.4](https://github.com/ankitgit/dev-test-new-test/tree/v0.0.4) (2022-05-22)
+
+**Fixed bugs:**
+
+- test issue [\#16](https://github.com/ankitgit/dev-test-new-test/issues/16)
+
 ## [v0.0.3](https://github.com/ankitgit/dev-test-new-test/tree/v0.0.3) (2022-05-22)
 
 - Another issue for the release [\#14](https://github.com/ankitgit/dev-test-new-test/issues/14)
@@ -8,13 +14,14 @@
 ## [v0.0.2](https://github.com/ankitgit/dev-test-new-test/tree/v0.0.2) (2022-05-22)
 
 - Create a test issue for release notes [\#12](https://github.com/ankitgit/dev-test-new-test/issues/12)
-- \#12: udated service.sh [\#13](https://github.com/ankitgit/dev-test-new-test/pull/13)
 
 **Merged pull requests:**
 
 - Test [\#11](https://github.com/ankitgit/dev-test-new-test/pull/11)
 
 ## [v0.0.1](https://github.com/ankitgit/dev-test-new-test/tree/v0.0.1) (2022-04-13)
+
+- \#12: udated service.sh [\#13](https://github.com/ankitgit/dev-test-new-test/pull/13)
 
 **Merged pull requests:**
 
