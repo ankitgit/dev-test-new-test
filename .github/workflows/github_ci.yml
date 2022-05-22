@@ -51,8 +51,8 @@ jobs:
           author: true
           compareLink: true
           bugsLabel: "## Bug Fixes 🐛"
-          sinceTag: ${{ github.event.inputs.start-tag }}
-          dueTag:  ${{ github.event.inputs.end-tag }}
+          sinceTag: "${{ github.event.inputs.start-tag }}"
+          dueTag:  "${{ github.event.inputs.end-tag }}"
           stripGeneratorNotice: true
           addSections: '{"Release Issues 🎊":{"prefix":"*","labels":["release"]}}'
           add-sections: '{"documentation 🎊":{"prefix":"*","labels":["release"]}}'
