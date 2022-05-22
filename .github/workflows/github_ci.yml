@@ -49,6 +49,8 @@ jobs:
           sinceTag: ${{ github.event.inputs.start-tag }}
           dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
+          compareLink: true
+          verbose: true
       - name: "Check content"
         run: ls -lrt
       - name: "Print Changelog"
