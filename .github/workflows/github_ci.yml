@@ -20,7 +20,7 @@ on:
 
 jobs:
   validateTrigger:
-    if: ${{ !github.event.pull_request.draft }}
+    if: ${{ !github.event.pull_request.draft && github.event_name != 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -49,5 +49,7 @@ jobs:
           sinceTag: ${{ github.event.inputs.start-tag }}
           dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
+      - name: "Check content"
+        run: ls -lrt
       - name: "Print Changelog"
-        run: cat /CHANGELOG.md
+        run: cat /github/workspace/CHANGELOG.md
