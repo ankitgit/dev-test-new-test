@@ -42,16 +42,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issues: true
-          output: ''
           issuesWoLabels: true
           pullRequests: true
           prWoLabels: true
           sinceTag: ${{ github.event.inputs.start-tag }}
           dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
-          compareLink: true
-          verbose: true
       - name: "Check content"
-        run: ls -lrt && pwd
+        run: ls -lrt /tmp
       - name: "Print Changelog"
         run: cat /tmp/github-changelog-http-cache
