@@ -48,5 +48,7 @@ jobs:
           sinceTag: ${{ github.event.inputs.start-tag }}
           dueTag:  ${{ github.event.inputs.end-tag }}
           addSections: '{"Release":{"labels":["release"]}}'
+      - name: "Check content"
+        run: ls /github/workspace
       - name: "Print Changelog"
         run: cat /github/workspace/CHANGELOG.md
