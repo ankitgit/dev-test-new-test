@@ -9,6 +9,8 @@ on:
   push:
     branches:
       - master
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       start-tag:
