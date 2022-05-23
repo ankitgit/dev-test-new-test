@@ -33,7 +33,7 @@ jobs:
 #          gh-token: ${{ secrets.GITHUB_TOKEN }}
 
   generateChangeLog:
-    if: github.event_name == 'workflow_dispatch'
+#    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     env:
       START_TAG: ${{ github.event.inputs.start-tag }}
