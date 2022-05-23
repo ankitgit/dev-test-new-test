@@ -61,15 +61,14 @@ jobs:
         with:
           commit_message: Update Changelog for tag
           file_pattern: CHANGELOG.md
-      - name: Get Changelog Entry
+      - name: "Fetch Changelog Entry For The Tag"
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v1
         with:
           version: v0.0.5
           path: CHANGELOG.md
-      - name: "Fetch Changelog Entry For The Tag"
-        id: changelog_reader
-        uses: mindsers/changelog-reader-action@v1
+      - name: "Release NebulaStream Repository"
+        uses: softprops/action-gh-release@v0.1.14
         with:
-          version: ${GITHUB_REF_NAME:1}
-          path: CHANGELOG.md
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: ${{ steps.changelog_reader.outputs.log_entry }}
