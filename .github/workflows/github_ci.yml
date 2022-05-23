@@ -52,6 +52,7 @@ jobs:
           compareLink: true
           futureRelease: v0.0.5
           bugsLabel: "### Bug Fixes 🐛"
+          issuesLabel: "### Miscellaneous Issues ✌️"
           sinceTag: ${{ github.event.inputs.start-tag }}
           #dueTag:  ${{ github.event.inputs.end-tag }}
           stripGeneratorNotice: true
