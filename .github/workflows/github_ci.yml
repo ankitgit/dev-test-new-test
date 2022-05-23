@@ -53,7 +53,7 @@ jobs:
           futureRelease: ${{ github.event.inputs.end-tag }}
           bugsLabel: "### Bug Fixes 🐛"
           sinceTag: ${{ github.event.inputs.start-tag }}
-          dueTag:  ${{ github.event.inputs.end-tag }}
+          #dueTag:  ${{ github.event.inputs.end-tag }}
           stripGeneratorNotice: true
           addSections: '{"release":{"prefix":"### Release Issues 🎊","labels":["release"]}, "Others":{"prefix":"### Other Issues ","labels":["others"]}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
