@@ -21,16 +21,16 @@ on:
         required: true
 
 jobs:
-  validateTrigger:
-    if: ${{ !github.event.pull_request.draft && github.event_name != 'workflow_dispatch' && github.event_name != 'push' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Contextual QA Checklists
-        uses: wyozi/contextual-qa-checklist-action@1.2
-        with:
-          gh-token: ${{ secrets.GITHUB_TOKEN }}
+#  validateTrigger:
+#    if: ${{ !github.event.pull_request.draft && github.event_name != 'workflow_dispatch' && github.event_name != 'push' }}
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - name: Contextual QA Checklists
+#        uses: wyozi/contextual-qa-checklist-action@1.2
+#        with:
+#          gh-token: ${{ secrets.GITHUB_TOKEN }}
 
   generateChangeLog:
     if: github.event_name == 'workflow_dispatch'
