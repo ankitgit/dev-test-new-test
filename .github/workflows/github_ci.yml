@@ -61,3 +61,15 @@ jobs:
         with:
           commit_message: Update Changelog for tag
           file_pattern: CHANGELOG.md
+      - name: Get Changelog Entry
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v1
+        with:
+          version: v0.0.5
+          path: CHANGELOG.md
+      - name: "Fetch Changelog Entry For The Tag"
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v1
+        with:
+          version: ${GITHUB_REF_NAME:1}
+          path: CHANGELOG.md
